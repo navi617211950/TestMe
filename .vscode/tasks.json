@@ -7,7 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "*.cpp",
+                "*.cpp", // 单文件编译 ${file}；多文件编译 *.cpp
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
