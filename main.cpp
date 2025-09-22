@@ -135,8 +135,34 @@ int main(int argc, char const *argv[])
     // ======================================================
     // 类的测试
     // 圆类的实例化
-    Circle cl;
-    cl.m_r = 10;
-    cout << "圆的周长是: " << cl.calculateZC() << endl;
+    // Circle cl;
+    // cl.m_r = 10;
+    // cout << "圆的周长是: " << cl.calculateZC() << endl;
+
+    // Student stu;
+    // stu.setName("张三");
+    // stu.showInfo();
+
+    // Person p1;
+    // p1.m_Name = "李四";
+    // //非公共属性，在类外部访问不到
+    // //p1.m_Car = "保时捷";
+    // //p1.m_Password  = 1252;
+    // cout << sizeof(p1) << endl;
+
+    // Human h;
+    // cout << h.getName() << ", " << h.getAage() << ", " << h.getLover() << endl;
+    // h.setAge(-5);
+    // h.setName("张三");
+    // h.setLover("桥本环奈");
+    // cout << h.getName() << ", " << h.getAage() << ", " << h.getLover() << endl;
+
+    Cube c;
+    c.init(2.5l, 54l, 1.5l);
+    cout << c.getArea() << endl;
+    Cube c2;
+    cout << c.same(c2) << endl;
+    c2.init(2.5l, 56l, 1.5l);
+    cout << (c.same(c2) == false) << endl;
     return 0;
 }
