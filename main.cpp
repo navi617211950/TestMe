@@ -7,6 +7,7 @@
 #include "memorytest.h"
 #include "reftest.h"
 #include "classtest.h"
+#include "Box.h"
 
 using namespace std;
 
@@ -157,12 +158,38 @@ int main(int argc, char const *argv[])
     // h.setLover("桥本环奈");
     // cout << h.getName() << ", " << h.getAage() << ", " << h.getLover() << endl;
 
-    Cube c;
-    c.init(2.5l, 54l, 1.5l);
-    cout << c.getArea() << endl;
-    Cube c2;
-    cout << c.same(c2) << endl;
-    c2.init(2.5l, 56l, 1.5l);
-    cout << (c.same(c2) == false) << endl;
+    // Cube c;
+    // c.init(2.5l, 54l, 1.5l);
+    // cout << c.getArea() << endl;
+    // Cube c2;
+    // cout << c.same(c2) << endl;
+    // c2.init(2.5l, 56l, 1.5l);
+    // cout << (c.same(c2) == false) << endl;
+
+    // // 构造函数
+    // sp1::Box box1;
+    // box1.height = 5.6;
+    // sp1::Box box2(2.4, 1.5, 3.6);
+    // cout << box1.height << endl;
+    // cout << "----------------------" << endl;
+    // cout << box2.length << endl;
+
+    // //拷贝构造函数
+    // sp1::Line line(10);
+    // sp1::display(line);
+    // cout << "^^^^^^^^^^^^^^^^^^^^" << endl;
+    // sp1::Line line2 = line;
+    // cout << "^^^^^^^^^^^^^^^^^^^^" << endl;
+    // sp1::display(line2);
+
+    //友元函数
+    sp2::Box box;
+    box.setWidth(10);
+    sp2::printWidth(box);
+    sp2::MyClass cls;
+    cls.setValue(34);
+    cls.printValue();
+
+    // int *ptr = new int;
     return 0;
 }
