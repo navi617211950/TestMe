@@ -18,53 +18,53 @@
        "${fileDirname}\\${fileBasenameNoExtension}.exe" 修改为 "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
        然后再数组最后添加"-I", "${workspaceFolder}\\include"
 
-    ```
-        "args": [
-            "-fdiagnostics-color=always",
-            "-g",
-            "${workspaceFolder}\\src\\*.cpp",
-            "-o",
-            "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
-            "-I",
-            "${workspaceFolder}\\include"
-        ],
-    ```
+```
+"args": [
+    "-fdiagnostics-color=always",
+    "-g",
+    "${workspaceFolder}\\src\\*.cpp",
+    "-o",
+    "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
+    "-I",
+    "${workspaceFolder}\\include"
+],
+```
     
     10. 编辑launch.json 将 "program": "${fileDirname}\\${fileBasenameNoExtension}.exe" 指令 修改为  "program": "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
 
-    ```
-        {
-            "configurations": [
+```
+{
+    "configurations": [
 
+        {
+            "name": "C/C++: g++.exe 构建和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "D:/Coding/Qt/Tools/mingw810_32/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\Coding\\Qt\\Tools\\mingw810_32\\bin\\gdb.exe",
+            "setupCommands": [
                 {
-                    "name": "C/C++: g++.exe 构建和调试活动文件",
-                    "type": "cppdbg",
-                    "request": "launch",
-                    "program": "${workspaceFolder}\\build\\${workspaceFolderBasename}.exe",
-                    "args": [],
-                    "stopAtEntry": false,
-                    "cwd": "D:/Coding/Qt/Tools/mingw810_32/bin",
-                    "environment": [],
-                    "externalConsole": false,
-                    "MIMode": "gdb",
-                    "miDebuggerPath": "D:\\Coding\\Qt\\Tools\\mingw810_32\\bin\\gdb.exe",
-                    "setupCommands": [
-                        {
-                            "description": "为 gdb 启用整齐打印",
-                            "text": "-enable-pretty-printing",
-                            "ignoreFailures": true
-                        },
-                        {
-                            "description": "将反汇编风格设置为 Intel",
-                            "text": "-gdb-set disassembly-flavor intel",
-                            "ignoreFailures": true
-                        }
-                    ],
-                    "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
                 }
             ],
-            "version": "2.0.0"
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
         }
+    ],
+    "version": "2.0.0"
+}
 
-    ```
+```
     11. 重新运行程序测试
